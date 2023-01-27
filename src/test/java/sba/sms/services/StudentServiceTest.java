@@ -38,4 +38,9 @@ class StudentServiceTest {
         assertThat(studentService.getAllStudents()).hasSameElementsAs(expected);
 
     }
+    @Test
+    void getStudentByEmail(){
+        Student expected = new Student("reema@gmail.com", "reema brown", "password");
+        assertThat(studentService.getStudentByEmail("reema@gmail.com").getPassword()).isEqualTo(expected.getPassword());
+    }
 }
